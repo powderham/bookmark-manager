@@ -7,6 +7,8 @@ class BookmarkManager < Sinatra::Base
   end
 
   get '/links' do
+    @links = Link.all
+    
     erb :links
   end
 
