@@ -3,28 +3,19 @@ ENV['RACK_ENV'] ||= "development"
 require_relative 'models/link'
 
 class BookmarkManager < Sinatra::Base
+  
   get '/' do
-    'Hello BookmarkManager!'
-  end
-
-  post '/links' do
-    Link.create(url: params[:url], title: params[:title])
-    redirect '/links'
-  end
-
-
-  get '/links' do
     @links = Link.all
     erb :links
   end
 
-
-  get '/links/new' do
+  get '/new' do
     erb :new_links
   end
 
-  post '/links' do
-    erb :links
+  post '/' do
+    Link.create(url: params[:url], title: params[:title])
+    redirect '/'
   end
 
   # start the server if ruby file executed directly
