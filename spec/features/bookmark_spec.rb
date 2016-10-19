@@ -1,5 +1,6 @@
 require 'spec_helper'
 require './models/link'
+require 'database_cleaner'
 
 RSpec.feature "link display", :type => :feature do
     # expect(page.status_code).to eq 200
