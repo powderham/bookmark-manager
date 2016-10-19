@@ -7,10 +7,8 @@ Your links!
 <div>
     <% @links.each do |link| %> <!-- Or whatever variable you would like to pass -->
         <ul id='links'>
-          <li>
           <%= link.title%>
           <%= link.url %>
-        </li>
     <% end %>
   </ul>
 </div>
