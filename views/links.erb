@@ -1,20 +1,16 @@
+Your links!
+
+<form action="/links/new" method="gets">
+  <input type="submit" value="Submit">
+</form>
+
 <div>
-    <% @links.each do |x| %> <!-- Or whatever variable you would like to pass -->
-        <%= "#{x[:id]}. #{x[:title]}. #{x[:url]}"%> <!-- You can do this however many times you would like -->
+    <% @links.each do |link| %> <!-- Or whatever variable you would like to pass -->
+        <ul id='links'>
+          <li>
+          <%= link.title%>
+          <%= link.url %>
+        </li>
     <% end %>
+  </ul>
 </div>
-
-<h1> New Link </h1>
-
-<!-- <form action='/links' method='POST'>
-  <label for='title'>
-    Title:
-    <input type='text' name='title' />
-  </label>
-  <label for='url'>
-    URL:
-    <input type='text' name='url' />
-  </label>
-  <input type='submit' value='Create link'>
-
-</form> -->
