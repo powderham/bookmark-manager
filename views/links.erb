@@ -1,14 +1,14 @@
 Your links!
 
 <form action="/new" method="gets">
-  <input type="submit" value="Submit">
+  <input type="submit" value="Save a new link">
 </form>
 
 <div>
     <% @links.each do |link| %> <!-- Or whatever variable you would like to pass -->
         <ul id='links'>
-          <%=link.title%>
-          <%=link.url %>
+          <li><%=link.title%></li>
+          <li><%=link.url %></li>
         </ul>
     <%end%>
 </div>
