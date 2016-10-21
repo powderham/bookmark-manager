@@ -9,4 +9,8 @@ RSpec.feature "link display", :type => :feature do
     expect(page).to have_content "Welcome, ed@gmail.com"
     expect{new_user}.to change(User, :count).by 1
   end
+
+  scenario "requires password confirmation" do
+    expect{bad_user}.to change(User, :count).by 0
+  end
 end

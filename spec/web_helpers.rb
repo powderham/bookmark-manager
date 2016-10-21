@@ -10,5 +10,14 @@ def new_user
   visit '/'
   fill_in :email, with: 'ed@gmail.com'
   fill_in :password, with: 'cool'
+  fill_in :password_confirmation, with: 'cool'
+  click_button "Sign up"
+end
+
+def bad_user
+  visit '/'
+  fill_in :email, with: 'ed@gmail.com'
+  fill_in :password, with: 'cool'
+  fill_in :password_confirmation, with: 'c00l'
   click_button "Sign up"
 end
