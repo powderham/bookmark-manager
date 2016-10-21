@@ -1,7 +1,12 @@
 Your links!
 
-<form action="/new" method="gets">
+<form action="/new">
   <input type="submit" value="Save a new link">
+</form>
+
+<form action="/filtered_links" method="post">
+  <input type="text" name="tag_filter">
+  <input type="submit" value="submit">
 </form>
 
 <div>
@@ -9,7 +14,10 @@ Your links!
         <ul id='links'>
           <li><%=link.title%></li>
           <li><%=link.url %></li>
-          <li><%link.tags.map(&:tag_name).join(', ')%></li>
+          <li><% link.tags.each do |tag| %>
+            <%= tag.tag_name %>
+            <% end %>
+          </li>
         </ul>
     <%end%>
 </div>
