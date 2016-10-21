@@ -1,4 +1,5 @@
-Your links!
+
+
 
 <form action="/new">
   <input type="submit" value="Save a new link">
@@ -15,7 +16,7 @@ Your links!
           <li><%=link.title%></li>
           <li><%=link.url %></li>
           <li><% link.tags.each do |tag| %>
-            <%= tag.tag_name %></p>
+            <%= tag.tag_name %>
             <% end %>
           </li>
         </ul>

@@ -1,3 +1,6 @@
+require 'data_mapper'
+require 'dm-postgres-adapter'
+
 namespace :data_mapper do
   desc "Auto update DataMapper"
   task :auto_upgrade do
@@ -6,7 +9,7 @@ namespace :data_mapper do
   end
 
   desc "Auto migrate DataMapper"
-  task do
+  task :auto_migrate do
     DataMapper.auto_migrate!
   end
 end
