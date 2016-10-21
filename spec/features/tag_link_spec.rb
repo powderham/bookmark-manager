@@ -6,9 +6,13 @@ require 'web_helpers'
 RSpec.feature "tag link", :type => :feature do
 
   scenario "tagging links" do
-    visit '/new'
     create_link
-    click_button "Create link"
     expect(page).to have_text "news"
+  end
+
+  scenario "can add multiple tags" do
+    create_link
+    expect(page).to have_content "news"
+    expect(page).to have_content "radio"
   end
 end
